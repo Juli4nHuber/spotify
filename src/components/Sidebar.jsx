@@ -13,8 +13,8 @@ export default function SideBar(){
             </div>
             <ul>
                 <li className="hover:text-white cursor-pointer flex flex-row font-semibold" >
-                    <div className="hover:text-white sidebar-icon"><FontAwesomeIcon icon={faHouse}/></div>
-                    <div className="hover:text-white ml-3">Inicio</div>
+                    <div className="text-white sidebar-icon"><FontAwesomeIcon icon={faHouse}/></div>
+                    <div className="text-white ml-3">Inicio</div>
                 </li>
                 <li className="hover:text-white cursor-pointer flex flex-row font-semibold mt-2">
                     <div className="sidebar-icon"><FontAwesomeIcon icon={faMagnifyingGlass}/></div>

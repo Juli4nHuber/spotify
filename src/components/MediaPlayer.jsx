@@ -1,5 +1,5 @@
 import React from "react";
-import SongPic from '../images/song.jpg'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faImage } from "@fortawesome/free-regular-svg-icons";
 import { faMicrophoneLines, faMobileScreen, faList, faVolumeOff, faUpRightAndDownLeftFromCenter, faShuffle, faBackwardStep, faPlayCircle, faForwardStep, faRotateRight, } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,7 @@ export default function MediaPlayer(){
     return(
         <div className="flex fixed border-t justify-between border-gray-800 bottom-0 h-20 w-full bg-gray-900 p-3">
             <div className="flex w-1/6">
-                <img className="cursor-pointer" src={ SongPic }/>
+                <img className="cursor-pointer" src={ require("../images/song.jpg") }/>
                 <div id="song-info" className="flex flex-col text-white self-center p-2">
                     <h1 id="song-name" className="text-sm font-semibold cursor-pointer">Ella</h1>
                     <label className="text-xs text-slate-400 hover:text-white underline-offset-1 cursor-pointer">Tan Bionica</label>
