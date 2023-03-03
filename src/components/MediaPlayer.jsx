@@ -7,7 +7,7 @@ import '../styles/mediaplayer.scss';
 
 export default function MediaPlayer(){
     return(
-        <div className="flex absolute h-20 w-full border-t justify-between border-neutral-800 bottom-0 bg-neutral-900 p-3">
+        <div id="mediaPlayer" className="flex h-20 w-full border-t justify-between border-neutral-700 bottom-0 bg-neutral-900 p-3">
             <div className="flex w-1/6">
                 <img className="cursor-pointer" src={ require("../images/song.jpg") }/>
                 <div id="song-info" className="flex flex-col text-white self-center p-2">

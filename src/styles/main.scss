@@ -1,0 +1,14 @@
+* {
+    scrollbar-width: normal;
+    scrollbar-color: #777 #555;
+
+    &::-webkit-scrollbar{
+        width: 2vh;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #5E5C59;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+}
