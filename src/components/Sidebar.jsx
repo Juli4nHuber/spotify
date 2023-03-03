@@ -6,7 +6,7 @@ import '../styles/sidebar.scss'
 
 export default function SideBar(){
     return (
-        <div className="fixed h-screen w-64 p-7 bg-black text-slate-300">
+        <div className="w-64 p-7 bg-black text-slate-300">
             <div className="h-14">
                 <img className="w-32" src={ logo }/>
                 {/* <FontAwesomeIcon icon={faSpotify}/> */}

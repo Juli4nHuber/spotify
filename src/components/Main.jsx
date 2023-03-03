@@ -6,8 +6,8 @@ import Mix from "./Mix"
 
 export default function Main(){
     return (
-        <div className="flex ml-64 mb-20 flex-col bg-neutral-800">
-                <div className="flex justify-between h-16 py-4 px-8">
+        <div className="flex flex-col w-full bg-neutral-800 overflow-y-auto">
+                <div className="flex top-0 left-0 relative w-full bg-neutral-800 justify-between h-16 py-4 px-8">
                     <div className="flex">
                         <div className="flex rounded-full hover:bg-black bg-neutral-900 w-8 cursor-pointer">
                             <FontAwesomeIcon className="m-auto text-slate-300" icon={ faAngleLeft }/>
@@ -23,7 +23,7 @@ export default function Main(){
                         <FontAwesomeIcon className="mx-2" icon={ faCaretDown }/>
                     </div>
                 </div>
-                <div className="bg-neutral-800 w-full h-auto p-8 pt-4">
+                <div className="bg-neutral-800 p-8 pt-4 overflow-auto ">
                     <h1 className="text-white text-3xl font-bold">Buenos días</h1>
                     <div className="grid grid-cols-2  lg:grid-cols-3 gap-4 py-4">
                         <Playlist name="reputation" image={ require("../images/playlists/reputation.jpg")}></Playlist>
@@ -34,7 +34,7 @@ export default function Main(){
                         <Playlist name="Balas Perdidas" image={ require("../images/playlists/balasperdidas.jpg")}></Playlist>
                     </div>
                     <h1 className="text-white text-2xl font-bold ">Tus mixes más escuchados</h1>
-                    <div className="flex grid-cols-3 lg:grid-cols-5 gap-4 pt-4">
+                    <div className="flex grid-cols-3 h-auto lg:grid-cols-5 gap-4 pt-4">
                         <Mix name="Taylor Swift" image={ require("../images/mixs/taylorswift.jpg")}/>
                         <Mix name="Charlie Puth" image={ require("../images/mixs/charlieputh.jpg")}/>
                         <Mix name="Tan Bionica " image={ require("../images/mixs/tanbionica.jpg")}/>
