@@ -6,12 +6,11 @@ import '../styles/sidebar.scss'
 
 export default function SideBar(){
     return (
-        <div className="w-64 p-7 bg-black text-slate-300">
-            <div className="h-14">
-                <img className="w-32" src={ logo }/>
-                {/* <FontAwesomeIcon icon={faSpotify}/> */}
+        <div className="w-[300px] p-7 bg-black text-slate-300">
+            <div className="h-auto">
+                <img className="w-full" src={ logo }/>
             </div>
-            <ul>
+            <ul className="mt-6">
                 <li className="hover:text-white cursor-pointer flex flex-row font-semibold" >
                     <div className="text-white sidebar-icon"><FontAwesomeIcon icon={faHouse}/></div>
                     <div className="text-white ml-3">Inicio</div>

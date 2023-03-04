@@ -1,7 +1,7 @@
 import "../styles/mix.scss"
 export default function Mix({name , image}){
     return (
-    <div className="flex flex-col bg-neutral-800 w-[200px] h-[290px] p-4 rounded-lg overflow-hidden">
+    <div className="flex flex-col bg-neutral-800 w-full p-4 rounded-lg overflow-hidden">
         <img className="rounded-md" src={ image }/>
         <div className="mix-text text-slate-400 py-4">
             <h5 className="font-bold whitespace-nowrap text-ellipsis text-white overflow-hidden">This is {name}</h5>
