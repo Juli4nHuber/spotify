@@ -7,7 +7,7 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="flex flex-col h-screen bg-black App">
+    <div className="flex flex-col h-screen overflow-hidden bg-black App">
       <div className="flex h-full overflow-hidden">
         <SideBar/>
         <Main/>

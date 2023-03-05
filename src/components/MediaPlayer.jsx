@@ -3,6 +3,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faImage } from "@fortawesome/free-regular-svg-icons";
 import { faMicrophoneLines, faMobileScreen, faList, faVolumeOff, faUpRightAndDownLeftFromCenter, faShuffle, faBackwardStep, faPlayCircle, faForwardStep, faRotateRight, } from "@fortawesome/free-solid-svg-icons";
+import Box from '@mui/material/Box';
+import SliderCustom from "./SliderCustom";
 import '../styles/mediaplayer.scss';
 
 export default function MediaPlayer(){
@@ -29,7 +31,13 @@ export default function MediaPlayer(){
                 </div>
                 <div className="flex h-1/6 w-full items-center text-slate-400">
                     <label className="text-xs font-semibold">0:00</label>
-                    <input className="flex hover:bg-green-600 bg-slate-400 h-1 w-full rounded-full cursor-pointer mx-3" type="range"/>
+                    <Box sx={{ 
+                        display: 'flex', 
+                        width: "100%", 
+                        marginInline: "1rem"
+                        }}>
+                        <SliderCustom/>
+                    </Box>
                     <label className="text-xs font-semibold">3:30</label>
                 </div>
                 
@@ -40,8 +48,13 @@ export default function MediaPlayer(){
                 <FontAwesomeIcon className="hover:text-white cursor-pointer" icon={ faMobileScreen }/>
                 <div className="flex items-center w-3/6">
                     <FontAwesomeIcon className="hover:text-white cursor-pointer" icon={ faVolumeOff }/>
-                    <input className="flex hover:bg-green-600 bg-slate-400 h-1 w-full rounded-full cursor-pointer ml-3" type="range"/>
-                </div>
+                    <Box sx={{ 
+                        display: 'flex', 
+                        width: "100%", 
+                        ml: "0.75rem"
+                        }}>
+                        <SliderCustom/>
+                    </Box>                </div>
                 <FontAwesomeIcon className="hover:text-white cursor-pointer" icon={ faUpRightAndDownLeftFromCenter }/>
             </div>
         </div>
