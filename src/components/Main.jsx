@@ -36,7 +36,7 @@ export default function Main(){
                 
                 <h1 className="text-white text-2xl font-bold ">Tus mixes más escuchados</h1>
                 <div className="overflow-x-auto">
-                    <div className="flex grid-cols-3 lg:grid-cols-5 gap-4 pt-4">
+                    <div className="flex grid-cols-3 lg:grid-cols-7 gap-4 pt-4">
                         <Mix name="Taylor Swift" image={ require("../images/mixs/taylorswift.jpg")}/>
                         <Mix name="Charlie Puth" image={ require("../images/mixs/charlieputh.jpg")}/>
                         <Mix name="Tan Bionica" image={ require("../images/mixs/tanbionica.jpg")}/>
