@@ -4,11 +4,12 @@ import {faAngleLeft, faAngleRight, faCaretDown } from "@fortawesome/free-solid-s
 import Playlist from "./Playlist";
 import Mix from "./Mix"
 import "../styles/main.scss"
-
+import Input from '@mui/base/Input';
 
 export default function Main(props){
 
     const [accessToken, setAccessToken] = useState(props.accessToken);
+    const [searchInput, setSearchInput] = useState("");
     const [albums, setAlbums] = useState("");
     const [user, setUser] = useState("");
 
@@ -33,9 +34,9 @@ export default function Main(props){
                 setUser(data);
             })
         }
-    
-        if(albums === "" && accessToken){
-            var artistID = await fetch('https://api.spotify.com/v1/search?q=tan%20bionica&type=artist', searchParameters)
+        
+        if(searchInput && accessToken){
+            var artistID = await fetch('https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist', searchParameters)
             .then(response => response.json())
             .then(data => { return data.artists.items[0].id});
 
@@ -45,21 +46,39 @@ export default function Main(props){
                 setAlbums(data.items);
             })
         }
-       
-    })
+        else{
+            setAlbums("");
+        }
+
+    }, [searchInput])
 
     return (
         <div className="flex w-full flex-col">
-            <div className="flex w-full bg-stone-900 justify-between h-16 py-4 px-8">
-                <div className="flex">
-                    <div className="flex rounded-full hover:bg-black bg-neutral-900 w-8 cursor-pointer">
+            <div className="flex w-full bg-[#121212] h-16 py-1 px-8 items-center">
+                <div className="flex items-center">
+                    <div className="flex rounded-full hover:bg-black bg-[#0A0A0A] w-8 h-8 cursor-pointer">
                         <FontAwesomeIcon className="m-auto text-slate-300" icon={ faAngleLeft }/>
                     </div>
-                    <div className="flex rounded-full hover:bg-black bg-neutral-900 ml-2 w-8 cursor-pointer">
+                    <div className="flex rounded-full hover:bg-black bg-[#0A0A0A] ml-2 w-8 h-8 cursor-pointer">
                         <FontAwesomeIcon className="m-auto text-slate-300" icon={ faAngleRight }/>
                     </div>
+                    
                 </div>
-                <div className="flex text-white font-semibold bg-black rounded-full p-1 items-center text-sm h-8 cursor-pointer hover:bg-neutral-700">
+                <div class="flex h-full justify-self-start">
+                    <Input
+                        slotProps={{
+                            input: {
+                            className:
+                                'w-80 h-full text-sm font-normal text-white leading-5 px-3 rounded-2xl focus:shadow-sm border border-solid border-[#242424] hover:border-[#414141] focus:border-2 focus:border-white bg-[#242424] focus-visible:outline-none ml-2',
+                            },
+                        }}
+                        aria-label="Demo input"
+                        placeholder="¿Qué quieres escuchar?"
+                        onChange={event => setSearchInput(event.target.value)}
+                    />
+                </div>
+
+                <div className="flex absolute right-0 mr-2 justify-self-end text-white font-semibold bg-black rounded-full p-1 items-center text-sm h-8 cursor-pointer hover:bg-neutral-700">
                     {(user !== "") ? 
                     <>
                         <img className="w-6 mr-2 rounded-full" src={ user.images[0].url }/>
@@ -78,6 +97,7 @@ export default function Main(props){
                     {(albums !== "") 
                         ?
                         albums.map((album, i) => {
+                            if(album.images[0].url)
                             return(
                                 <Mix key={album.id} name={album.name} image={album.images[0].url} anio={album.release_date} tipo={album.album_type}/>
                             )
